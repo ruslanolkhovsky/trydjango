@@ -1,0 +1,21 @@
+{% extends 'blog/blog_base.html' %}
+
+
+{% block content %}
+
+<h1>Blog</h1>
+
+<p>
+<a href="create/"> Create New Article </a>
+</p>
+
+{% for item in object_list %}
+  <p>
+    <a href="{{ item.get_absolute_url }}">{{ item.topic }}</a> | {{ item.author }}  ...
+    <a href="{{ item.get_absolute_url }}update/"> Update </a>
+    <a href="{{ item.get_absolute_url }}delete/"> Delete </a>
+  </p>
+{% endfor %}
+
+
+{% endblock %}

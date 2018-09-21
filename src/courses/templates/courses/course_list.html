@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Courses</h1>
+<p>
+<a href="create/"> Create New Course </a>
+</p>
+
+{% for item in object_list %}
+  <p>
+    <a href="{{ item.get_absolute_url }}">{{ item.name }}</a> | {{ item.description }}  ...
+    <a href="{{ item.get_absolute_url }}update/"> Update </a> &nbsp;
+    <a href="{{ item.get_absolute_url }}delete/"> Delete </a>
+  </p>
+{% endfor %}
+
+{% endblock %}

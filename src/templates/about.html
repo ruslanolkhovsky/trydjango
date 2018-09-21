@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<h1>About</h1>
+
+
+{{ my_text|capfirst|title }}, {{ my_number }}, {{ my_html|safe}}
+
+<ul>
+{% for l in my_list %}
+  {% if l == 123 %}
+    <li>{{ forloop.counter }} - {{ l|add:22 }}</li>
+  {% elif l == '' %}
+    <li>{{ forloop.counter }} - Empty!</li>
+  {% else %}
+    <li>{{ forloop.counter }} - {{ l }}</li>
+  {% endif %}
+{% endfor %}
+</ul>
+
+{% endblock %}

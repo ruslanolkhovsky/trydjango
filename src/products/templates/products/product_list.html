@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Products</h1>
+
+<p>
+<a href="create/"> Create New Product </a>
+</p>
+
+{% for item in object_list %}
+  <p>
+    <a href="{{ item.get_absolute_url }}">{{ item.title }}</a> | {{ item.price }} | {{ item.description }} | {{ item.summary }} | {{ item.featured }} ...
+    <a href="{{ item.get_absolute_url }}update/"> Update </a>
+    <a href="{{ item.get_absolute_url }}delete/"> Delete </a>
+  </p>
+{% endfor %}
+
+
+{% endblock %}
